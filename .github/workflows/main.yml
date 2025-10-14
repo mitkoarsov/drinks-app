@@ -1,8 +1,8 @@
-name: Drinks App
+name: Deploy Angular App to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # change if your default branch differs
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write    # must be an object (NOT a list)
+      contents: write   # required so GITHUB_TOKEN can push to gh-pages
 
     steps:
       - name: Checkout
@@ -22,34 +22,20 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular (set correct base-href)
+      - name: Build Angular (base-href for GitHub Pages)
         run: |
           set -eux
-          npm run build -- --configuration production --base-href "/drinks-app/" --output-path dist/browser cp dist/browser/index.html
-
-      - name: Locate dist folder
-        run: |
-          set -eux
-          INDEX=$(find dist -maxdepth 5 -type f -name index.html | head -n1)
-          if [ -z "$INDEX" ]; then
-            echo "No index.html found under dist/"
-            exit 1
-          fi
-          echo "INDEX=$INDEX" >> $GITHUB_ENV
-          echo "DIST_DIR=$(dirname "$INDEX")" >> $GITHUB_ENV
-          echo "Found DIST_DIR=$(dirname "$INDEX")"
-
-      - name: SPA fallback (404.html)
-        run: |
-          set -eux
-          cp "${{ env.INDEX }}" "${{ env.DIST_DIR }}/404.html"
+          npm run build -- --configuration production --base-href "/drinks-app/" --output-path dist/browser
+          # SPA fallback so refresh on deep routes works:
+          cp dist/browser/index.html dist/browser/404.html
+          ls -la dist/browser
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}   # must be under 'with:' as key:value
-          publish_dir: ${{ env.DIST_DIR }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/browser
           publish_branch: gh-pages
