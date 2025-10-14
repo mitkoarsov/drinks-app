@@ -20,11 +20,7 @@ import { BrandConfigService, BrandConfig } from '../../../services/brand-config.
       </span>
       <div class="flex flex-wrap gap-6 justify-center">
         <a [routerLink]="['/about']" class="hover:text-white">{{ 'footer.about' | translate }}</a>
-        <a
-          href="https://github.com/GetEliq/Eliq-drinks-app-Mitko"
-          target="_blank"
-          class="hover:text-white"
-        >
+        <a href="https://github.com/mitkoarsov/drinks-app" target="_blank" class="hover:text-white">
           GitHub
         </a>
         <a href="https://www.linkedin.com/in/mitkoarsov/" target="_blank" class="hover:text-white">
