@@ -1,4 +1,4 @@
-# Eliq Drinks App (White-Label Assignment)
+# White-Label App
 
 This is a white-label drinks app built with Angular. All UI, branding, and features are driven by a JSON config file. The app can be rebranded and extended for any client.
 
