@@ -1,0 +1,55 @@
+name: Deploy Angular App to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]   # change if your default branch differs
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write    # must be an object (NOT a list)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build Angular (set correct base-href)
+        run: |
+          set -eux
+          npm run build -- --configuration production --base-href "/<your-repo-name>/"
+
+      - name: Locate dist folder
+        run: |
+          set -eux
+          INDEX=$(find dist -maxdepth 5 -type f -name index.html | head -n1)
+          if [ -z "$INDEX" ]; then
+            echo "No index.html found under dist/"
+            exit 1
+          fi
+          echo "INDEX=$INDEX" >> $GITHUB_ENV
+          echo "DIST_DIR=$(dirname "$INDEX")" >> $GITHUB_ENV
+          echo "Found DIST_DIR=$(dirname "$INDEX")"
+
+      - name: SPA fallback (404.html)
+        run: |
+          set -eux
+          cp "${{ env.INDEX }}" "${{ env.DIST_DIR }}/404.html"
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}   # must be under 'with:' as key:value
+          publish_dir: ${{ env.DIST_DIR }}
+          publish_branch: gh-pages
