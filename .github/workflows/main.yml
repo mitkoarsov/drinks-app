@@ -1,4 +1,4 @@
-name: Deploy Angular App to GitHub Pages
+name: Drinks App
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # required so GITHUB_TOKEN can push to gh-pages
+      contents: write
 
     steps:
       - name: Checkout
@@ -22,20 +22,39 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install deps
         run: npm ci
 
-      - name: Build Angular (base-href for GitHub Pages)
+      - name: Build Angular (set base-href for repo)
         run: |
           set -eux
-          npm run build -- --configuration production --base-href "/drinks-app/" --output-path dist/browser
-          # SPA fallback so refresh on deep routes works:
-          cp dist/browser/index.html dist/browser/404.html
-          ls -la dist/browser
+          npm run build -- --configuration production --base-href "/drinks-app/"
+
+      - name: Locate dist folder
+        run: |
+          set -eux
+          # Find the first index.html under dist/
+          INDEX=$(find dist -type f -name index.html | head -n 1)
+          if [ -z "$INDEX" ]; then
+            echo "No index.html found under dist/"
+            find dist -maxdepth 3 -type d -print
+            exit 1
+          fi
+          DIST_DIR=$(dirname "$INDEX")
+          echo "INDEX=$INDEX" >> $GITHUB_ENV
+          echo "DIST_DIR=$DIST_DIR" >> $GITHUB_ENV
+          echo "Resolved DIST_DIR=$DIST_DIR"
+          ls -la "$DIST_DIR"
+
+      - name: SPA fallback (copy 404.html)
+        run: |
+          set -eux
+          cp "${{ env.INDEX }}" "${{ env.DIST_DIR }}/404.html"
+          ls -la "${{ env.DIST_DIR }}"
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/browser
+          publish_dir: ${{ env.DIST_DIR }}
           publish_branch: gh-pages
