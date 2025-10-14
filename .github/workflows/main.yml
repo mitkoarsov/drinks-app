@@ -28,7 +28,7 @@ jobs:
       - name: Build Angular (set correct base-href)
         run: |
           set -eux
-          npm run build -- --configuration production --base-href "/<your-repo-name>/"
+          npm run build -- --configuration production --base-href "/drinks-app/"
 
       - name: Locate dist folder
         run: |
