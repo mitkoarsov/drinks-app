@@ -30,7 +30,11 @@ export class BrandConfigService {
 
   async loadBrands(): Promise<BrandConfig[]> {
     if (this.brands.length) return this.brands;
-    const brandFiles = ['/brands/clasico.json', '/brands/country.json', '/brands/dolce.json'];
+    const brandFiles = [
+      '/brands/clasico.json',
+      '/brands/country.json',
+      '/brands/dolce.json',
+    ];
     const results = await Promise.all(
       brandFiles.map((file) => firstValueFrom(this.http.get<BrandConfig>(file))),
     );

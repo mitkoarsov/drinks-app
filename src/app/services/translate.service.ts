@@ -32,7 +32,7 @@ export class TranslateService {
   }
 
   private loadTranslations(lang: string) {
-    this.http.get(`/assets/i18n/${lang}.json`).subscribe((trans) => {
+    this.http.get(`assets/i18n/${lang}.json`).subscribe((trans) => {
       this.translations = trans || {};
       this.translationsChanged$.next();
     });
