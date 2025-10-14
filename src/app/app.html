@@ -1,0 +1,9 @@
+@if ((isAdult$ | async) === null) {
+  <app-age-gate></app-age-gate>
+} @else {
+  <app-header></app-header>
+  <main>
+    <router-outlet />
+  </main>
+  <app-footer></app-footer>
+}

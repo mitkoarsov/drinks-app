@@ -1,0 +1,9 @@
+{
+  "name": "Country",
+  "appName": "Country",
+  "logoUrl": "https://images.squarespace-cdn.com/content/v1/64f28d1a46f48c15abcab563/7528b13e-e8fd-4a35-971d-62263516fc84/ccc_logo.png",
+  "theme": {
+    "primaryColor": "#059669",
+    "accentColor": "#f59e42"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "header": {
+    "fallbackAppName": "App",
+    "homeAria": "Vai alla home page"
+  },
+  "brandSwitcher": {
+    "selectBrand": "Seleziona marca"
+  },
+  "searchBar": {
+    "placeholder": "Cerca una bevanda...",
+    "clear": "Cancella ricerca"
+  },
+  "ageGate": {
+    "title": "Hai 18 anni o più?",
+    "description": "Devi confermare la tua età per accedere a questa app.",
+    "yes": "Sì, ho 18+",
+    "no": "No"
+  },
+  "homepage": {
+    "title": "Scegli la tua bevanda",
+    "sortBy": "Ordina per"
+  },
+  "drink": {
+    "home": "Home",
+    "ingredients": "Ingredienti:",
+    "instructions": "Istruzioni:"
+  },
+  "about": {
+    "title": "Informazioni su {appName}",
+    "business": "Prospettiva aziendale",
+    "businessDesc": "{appName} è un'applicazione web white-label per marchi e rivenditori di bevande. Consente a ciascun partner di presentare le proprie bevande, il proprio marchio e le proprie funzionalità in un'interfaccia personalizzabile.",
+    "user": "Prospettiva utente",
+    "userDesc1": "Gli utenti possono sfogliare le bevande, cercare e filtrare per gusto o ingrediente e scoprire nuovi preferiti. L'app è veloce, facile da usare e si adatta al marchio scelto.",
+    "userDesc2": "L'esperienza è fluida su qualsiasi dispositivo, con navigazione chiara e design accessibile.",
+    "technical": "Prospettiva tecnica",
+    "technicalDesc": "{appName} è costruito per prestazioni e flessibilità:",
+    "framework": "Framework:",
+    "styling": "Stile:",
+    "state": "Stato:",
+    "theming": "Tematizzazione:",
+    "branding": "Branding:",
+    "routing": "Instradamento:",
+    "api": "API:",
+    "accessibility": "Accessibilità:",
+    "performance": "Prestazioni:",
+    "tooling": "Strumenti:",
+    "codebase": "Il codice è modulare e facile da estendere, con le migliori pratiche per la gestione degli errori e la manutenibilità."
+  },
+  "404": {
+    "title": "Perso dans le mélange ?",
+    "description": "On dirait que vous avez un peu trop secoué les choses. Cette page n'existe pas, mais vous pouvez toujours revenir à la page d'accueil pour un autre tour !"
+  },
+  "pagination": {
+    "showing": "Mostrando",
+    "of": "de",
+    "drinks": "bebidas",
+    "back": "Atrás",
+    "page": "Página",
+    "next": "Siguiente"
+  },
+  "footer": {
+    "dataFrom": "Datos de",
+    "about": "Acerca de"
+  }
+}

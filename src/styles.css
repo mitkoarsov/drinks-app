@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Utility classes for theme colors */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+.text-on-primary {
+  color: #fff !important;
+}
+.text-on-accent {
+  color: #fff !important;
+}
+
+/* Themed button: primary bg, accent on hover/focus */
+.themed-btn {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+  transition: background 0.2s;
+}
+.themed-btn:hover,
+.themed-btn:focus {
+  background-color: var(--accent) !important;
+}

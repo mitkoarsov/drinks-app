@@ -1,0 +1,39 @@
+<header class="w-full bg-primary text-on-primary p-6 flex flex-col items-center">
+  <div class="flex flex-row items-center w-full gap-4">
+    <div class="flex-1 flex items-center">
+      <a
+        [routerLink]="'/'"
+        [attr.aria-label]="'header.homeAria' | translate"
+        class="focus:outline-none"
+      >
+        <h1 class="text-2xl font-bold cursor-pointer">
+          {{ config?.appName || ('header.fallbackAppName' | translate) }}
+        </h1>
+      </a>
+    </div>
+    <div class="flex-1 flex justify-end items-center">
+      <app-language-bar></app-language-bar>
+    </div>
+  </div>
+  <div class="my-2 flex-1 flex justify-center items-center">
+    @if (brands.length && selectedBrand) {
+      <app-brand-switcher
+        [options]="brands"
+        [selected]="selectedBrand"
+        (brandChange)="onBrandChange($event)"
+      >
+      </app-brand-switcher>
+    }
+  </div>
+  <div class="flex flex-col items-center">
+    <a [routerLink]="'/'" [attr.aria-label]="'header.homeAria' | translate" (click)="onLogoClick()">
+      <img
+        [src]="config?.logoUrl || ''"
+        [alt]="(config?.appName || ('header.fallbackAppName' | translate)) + ' Logo'"
+        class="w-48 h-48 aspect-square object-cover mb-2 hover:opacity-80 transition"
+        loading="lazy"
+      />
+    </a>
+  </div>
+  <app-search-bar></app-search-bar>
+</header>

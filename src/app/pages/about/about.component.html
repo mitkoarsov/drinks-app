@@ -1,0 +1,45 @@
+
+<div class="max-w-3xl mx-auto px-4 py-10">
+  @let brandConfiguration = brandConfiguration$ | async;
+  <h1 class="text-3xl sm:text-4xl font-bold text-primary mb-6">
+    {{ 'about.title' | translate: { appName: brandConfiguration?.appName || 'the App' } }}
+  </h1>
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold text-accent mb-2">{{ 'about.business' | translate }}</h2>
+    <p class="text-gray-700 leading-relaxed mb-2">
+      <strong>{{ brandConfiguration?.appName || 'This app' }}</strong>
+      {{ 'about.businessDesc' | translate: { appName: brandConfiguration?.appName || 'This app' } }}
+    </p>
+  </section>
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold text-accent mb-2">{{ 'about.user' | translate }}</h2>
+    <p class="text-gray-700 leading-relaxed mb-2">
+      {{ 'about.userDesc1' | translate }}
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+      {{ 'about.userDesc2' | translate }}
+    </p>
+  </section>
+  <section>
+    <h2 class="text-xl font-semibold text-accent mb-2">{{ 'about.technical' | translate }}</h2>
+    <p class="text-gray-700 leading-relaxed mb-2">
+      <strong>{{ brandConfiguration?.appName || 'The app' }}</strong>
+      {{ 'about.technicalDesc' | translate: { appName: brandConfiguration?.appName || 'The app' } }}
+    </p>
+    <ul class="list-disc pl-6 text-gray-700 mb-2">
+      <li><strong>{{ 'about.framework' | translate }}</strong> Angular {{'20.3.5'}}</li>
+      <li><strong>{{ 'about.styling' | translate }}</strong> Tailwind CSS {{'3.4.18'}} for fast, responsive design</li>
+      <li><strong>{{ 'about.state' | translate }}</strong> @ngrx/component-store and RxJS for modular, reactive state</li>
+      <li><strong>{{ 'about.theming' | translate }}</strong> CSS variables (<code>--primary</code>, <code>--accent</code>) set from JSON brand configs for instant brand switching</li>
+      <li><strong>{{ 'about.branding' | translate }}</strong> Brand config (name, logo, colors, features) loaded from JSON—add new brands without code changes</li>
+      <li><strong>{{ 'about.routing' | translate }}</strong> Angular Router with 404 handling and lazy loading</li>
+      <li><strong>{{ 'about.api' | translate }}</strong> Drink data fetched from a configurable API endpoint</li>
+      <li><strong>{{ 'about.accessibility' | translate }}</strong> Semantic HTML and color contrast for WCAG compliance</li>
+      <li><strong>{{ 'about.performance' | translate }}</strong> Fast load, LCP image prioritization, and minimal bundle size</li>
+      <li><strong>{{ 'about.tooling' | translate }}</strong> Prettier, ESLint, and TypeScript for code quality (see <code>package.json</code>)</li>
+    </ul>
+    <p class="text-gray-700 leading-relaxed">
+      {{ 'about.codebase' | translate }}
+    </p>
+  </section>
+</div>

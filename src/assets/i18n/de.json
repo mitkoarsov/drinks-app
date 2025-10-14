@@ -1,0 +1,65 @@
+{
+  "header": {
+    "fallbackAppName": "App",
+    "homeAria": "Zur Startseite gehen"
+  },
+  "brandSwitcher": {
+    "selectBrand": "Marke auswählen"
+  },
+  "searchBar": {
+    "placeholder": "Getränk suchen...",
+    "clear": "Suche löschen"
+  },
+  "ageGate": {
+    "title": "Bist du 18 Jahre oder älter?",
+    "description": "Du musst dein Alter bestätigen, um auf diese App zuzugreifen.",
+    "yes": "Ja, ich bin 18+",
+    "no": "Nein"
+  },
+  "homepage": {
+    "title": "Wähle dein Getränk",
+    "sortBy": "Sortieren nach"
+  },
+  "drink": {
+    "home": "Startseite",
+    "ingredients": "Zutaten:",
+    "instructions": "Anleitung:"
+  },
+  "about": {
+    "title": "Über {appName}",
+    "business": "Geschäftliche Perspektive",
+    "businessDesc": "{appName} ist eine White-Label-Webanwendung für Getränkemarken und Einzelhändler. Sie ermöglicht es jedem Partner, seine eigenen Getränke, sein Branding und seine Funktionen in einer anpassbaren Oberfläche zu präsentieren.",
+    "user": "Benutzerperspektive",
+    "userDesc1": "Benutzer können Getränke durchsuchen, nach Geschmack oder Zutat suchen und filtern und neue Favoriten entdecken. Die App ist schnell, einfach zu bedienen und passt sich Ihrer gewählten Marke an.",
+    "userDesc2": "Das Erlebnis ist auf jedem Gerät nahtlos, mit klarer Navigation und zugänglichem Design.",
+    "technical": "Technische Perspektive",
+    "technicalDesc": "{appName} ist auf Leistung und Flexibilität ausgelegt:",
+    "framework": "Framework:",
+    "styling": "Stil:",
+    "state": "Status:",
+    "theming": "Theming:",
+    "branding": "Branding:",
+    "routing": "Routing:",
+    "api": "API:",
+    "accessibility": "Barrierefreiheit:",
+    "performance": "Leistung:",
+    "tooling": "Werkzeuge:",
+    "codebase": "Der Code ist modular und einfach zu erweitern, mit Best Practices für Fehlerbehandlung und Wartbarkeit."
+  },
+  "404": {
+    "title": "In der Mischung verloren?",
+    "description": "Sieht so aus, als hättest du ein bisschen zu viel durcheinandergebracht. Diese Seite existiert nicht, aber du kannst immer zur Startseite zurückkehren für eine weitere Runde!"
+  },
+  "pagination": {
+    "showing": "Anzeigen",
+    "of": "von",
+    "drinks": "Getränken",
+    "back": "Zurück",
+    "page": "Seite",
+    "next": "Nächste"
+  },
+  "footer": {
+    "dataFrom": "Daten von",
+    "about": "Über"
+  }
+}
