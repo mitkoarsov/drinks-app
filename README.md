@@ -1,88 +1,61 @@
-# White-Label App
+# Drinks App (White-Label, Multi-Brand, Multi-Language)
 
-This is a white-label drinks app built with Angular. All UI, branding, and features are driven by a JSON config file. The app can be rebranded and extended for any client.
+This Angular app is fully white-label and multi-brand, with all UI, branding, and features controlled by JSON config files. The app is designed for easy rebranding and extension for any client or use-case.
 
 ## Features
 
-- Drinks list: Grid of drinks (image + name) from [TheCocktailDB API](https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic)
-- Drink details: Image, name, ingredients, instructions (multi-language) from [TheCocktailDB API](https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id})
-- White-label: All branding (logo, colors, app name, etc.)
-- Dynamic theming: CSS variables set at runtime from config
-- Localization: UI in EN, FR, ES, DE, IT; runtime language switching
-- Age gate: Modal for age verification
-- Accessible & responsive
-- Error handling: 404 and loading states
+- **Drinks list:** Grid of drinks (image + name) from TheCocktailDB API
+- **Drink details:** Image, name, ingredients, instructions (multi-language)
+- **Non-adult mode:** If the user is not an adult (age gate), only non-alcoholic drinks are shown
+- **Sorting:** Drinks can be sorted by name (A-Z and Z-A)
+- **Pagination:** Drinks list is paginated for better UX
+- **Multi-language:** UI supports EN, FR, ES, DE, IT; language can be switched at runtime
+- **Multi-brand:** Multiple brands can be configured and switched at runtime
+- **Dynamic theming:** Colors, logo, and app name are set at runtime from the brand JSON
+- **Accessible & responsive**
+- **Error handling:** 404 and loading states
 
-## White-Labeling
+## How UI Elements Are Managed via JSON
 
-The app reads a `brand-config.json` file at startup. This file defines:
-
-- `appName`: Brand name
-- `logoUrl`: Brand logo
-- `theme`: Primary/accent colors
-- Other brand-specific settings
-
-**Example `brand-config.json`:**
-
-```json
-{
-  "appName": "Eliq Spirits",
-  "logoUrl": "/assets/brands/eliq/logo.svg",
-  "theme": {
-    "primaryColor": "#be185d",
-    "accentColor": "#f472b6"
-  }
-}
-```
-
-### How to Rebrand
-
-1. Create a new JSON config (change name, logo, colors, features)
-2. Place it in `assets/brands/`
-3. Select the brand in the UI or set as default
-4. The app updates UI and branding instantly
-
-### How the JSON Config Controls the UI
-
-The `brand-config.json` file directly controls the following UI elements:
-
-- **App name:** Used in the header, footer, and About page. Changing `appName` in the JSON updates all these places instantly.
-- **Logo:** The `logoUrl` path is used for the header logo. Swap the logo by changing the URL in the config.
-- **Theme colors:** The `theme.primaryColor` and `theme.accentColor` values are injected as CSS variables. This changes the look of all buttons, links, and highlights throughout the app.
-- **Feature toggles:** You can add boolean flags (e.g., `showSearch`, `showBrandSwitcher`) to the config. The app reads these and conditionally shows/hides the search bar, brand switcher, or other UI features without code changes.
-- **Custom links/text:** You can extend the config to include custom footer links or About page text. The app will render these dynamically if present.
-
-**Example:**
+All UI branding and many features are controlled by a JSON config file for each brand, located in `public/brands/`. Example:
 
 ```json
 {
   "appName": "MyBrand",
-  "logoUrl": "/assets/brands/mybrand/logo.svg",
+  "logoUrl": "brands/mybrand/logo.svg",
   "theme": {
     "primaryColor": "#123456",
     "accentColor": "#abcdef"
-  },
-  "features": {
-    "showSearch": false,
-    "showBrandSwitcher": true
-  },
-  "footerLinks": [{ "label": "Contact", "url": "/contact" }]
+  }
 }
 ```
 
-**Design trade-offs:**
+### What you can control in the JSON:
 
-- The config is flat and easy to edit, but not all possible UI customizations are exposed (for simplicity).
-- Adding new features is as simple as adding a new property to the config and reading it in the relevant component.
-- This approach keeps the codebase generic and brand-agnostic, but requires discipline to avoid hardcoding brand-specific logic in the app.
+- **App name:** Used in header, footer, About page
+- **Logo:** Used in header
+- **Theme colors:** Set as CSS variables for all UI
+
+### How to rebrand or extend:
+
+1. Create a new JSON config for your brand in `public/brands/`
+2. Add or change properties as needed (name, logo, colors, features)
+3. Select the brand in the UI or set as default
+4. The app updates instantly with the new branding and features
+
+### Design decisions & trade-offs
+
+- **Flat, editable config:** Easy to add new brands or features by editing JSON, but not all UI customizations are exposed for simplicity
+- **No hardcoded brand logic:** All brand-specific logic is in the config, keeping the codebase generic
+- **Feature flags:** New UI features can be toggled or added by extending the config and reading it in components
 
 ## Tech
 
 - Angular 20.3.5
-- Tailwind CSS 3.4.18
-- @ngrx/component-store, RxJS
 - Angular Router
 - TheCocktailDB API
+- Tailwind CSS 3.4.18
+- @ngrx/component-store, RxJS
 - Prettier, ESLint, TypeScript
 
 ## Run locally
@@ -95,11 +68,4 @@ Open [http://localhost:4200/](http://localhost:4200/)
 
 ## Demo
 
-**Live:** [https://GetEliq.github.io/Eliq-drinks-app-Mitko/](https://GetEliq.github.io/Eliq-drinks-app-Mitko/)
-
----
-
-**Design notes:**
-
-- All branding/theming is runtime-configurable (WLA-first)
-- Minimal bundle, fast load, accessible, modular
+**Live:** [https://mitkoarsov.github.io/drinks-app/](https://mitkoarsov.github.io/drinks-app/)
