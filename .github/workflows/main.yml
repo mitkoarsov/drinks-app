@@ -1,4 +1,4 @@
-name: Deploy Angular App to GitHub Pages
+name: Drinks App
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
       - name: Build Angular (set correct base-href)
         run: |
           set -eux
-          npm run build -- --configuration production --base-href "/drinks-app/"
+          npm run build -- --configuration production --base-href "/drinks-app/" --output-path dist/browser cp dist/browser/index.html
 
       - name: Locate dist folder
         run: |
