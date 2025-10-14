@@ -1,0 +1,65 @@
+{
+  "header": {
+    "fallbackAppName": "App",
+    "homeAria": "Ir a la página principal"
+  },
+  "brandSwitcher": {
+    "selectBrand": "Seleccionar marca"
+  },
+  "searchBar": {
+    "placeholder": "Buscar una bebida...",
+    "clear": "Borrar búsqueda"
+  },
+  "ageGate": {
+    "title": "¿Tienes 18 años o más?",
+    "description": "Debes confirmar tu edad para acceder a esta aplicación.",
+    "yes": "Sí, tengo 18+",
+    "no": "No"
+  },
+  "homepage": {
+    "title": "Elige tu bebida",
+    "sortBy": "Ordenar por"
+  },
+  "drink": {
+    "home": "Inicio",
+    "ingredients": "Ingredientes:",
+    "instructions": "Instrucciones:"
+  },
+  "about": {
+    "title": "Acerca de {appName}",
+    "business": "Perspectiva empresarial",
+    "businessDesc": "{appName} es una aplicación web de marca blanca para marcas y minoristas de bebidas. Permite a cada socio presentar sus propias bebidas, marca y características en una interfaz personalizable.",
+    "user": "Perspectiva del usuario",
+    "userDesc1": "Los usuarios pueden explorar bebidas, buscar y filtrar por sabor o ingrediente, y descubrir nuevos favoritos. La aplicación es rápida, fácil de usar y se adapta a la marca elegida.",
+    "userDesc2": "La experiencia es fluida en cualquier dispositivo, con navegación clara y diseño accesible.",
+    "technical": "Perspectiva técnica",
+    "technicalDesc": "{appName} está construido para el rendimiento y la flexibilidad:",
+    "framework": "Framework:",
+    "styling": "Estilo:",
+    "state": "Estado:",
+    "theming": "Tematización:",
+    "branding": "Marca:",
+    "routing": "Enrutamiento:",
+    "api": "API:",
+    "accessibility": "Accesibilidad:",
+    "performance": "Rendimiento:",
+    "tooling": "Herramientas:",
+    "codebase": "El código es modular y fácil de ampliar, con buenas prácticas para el manejo de errores y el mantenimiento."
+  },
+  "404": {
+    "title": "Perdido en la mezcla?",
+    "description": "Parece que has agitado un poco demasiado las cosas. Esta página no existe, pero siempre puedes volver a la página de inicio para otra ronda."
+  },
+  "pagination": {
+    "showing": "Mostrando",
+    "of": "de",
+    "drinks": "bebidas",
+    "back": "Atrás",
+    "page": "Página",
+    "next": "Siguiente"
+  },
+  "footer": {
+    "dataFrom": "Datos de",
+    "about": "Acerca de"
+  }
+}

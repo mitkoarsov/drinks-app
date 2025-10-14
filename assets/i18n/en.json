@@ -1,0 +1,65 @@
+{
+  "header": {
+    "fallbackAppName": "App",
+    "homeAria": "Go to homepage"
+  },
+  "brandSwitcher": {
+    "selectBrand": "Select Brand"
+  },
+  "searchBar": {
+    "placeholder": "Search for a drink...",
+    "clear": "Clear search"
+  },
+  "ageGate": {
+    "title": "Are you 18 or older?",
+    "description": "You must confirm your age to access this app.",
+    "yes": "Yes, I am 18+",
+    "no": "No"
+  },
+  "homepage": {
+    "title": "Choose your drink",
+    "sortBy": "Sort by"
+  },
+  "drink": {
+    "home": "Home",
+    "ingredients": "Ingredients:",
+    "instructions": "Instructions:"
+  },
+  "about": {
+    "title": "About {appName}",
+    "business": "Business Perspective",
+    "businessDesc": "{appName} is a white-label web application for beverage brands and retailers. It allows each partner to present their own drinks, branding, and features in a customizable interface.",
+    "user": "User Perspective",
+    "userDesc1": "Users can browse drinks, search and filter by taste or ingredient, and discover new favorites. The app is fast, easy to use, and adapts to your chosen brand.",
+    "userDesc2": "The experience is seamless on any device, with clear navigation and accessible design.",
+    "technical": "Technical Perspective",
+    "technicalDesc": "{appName} is built for performance and flexibility:",
+    "framework": "Framework:",
+    "styling": "Styling:",
+    "state": "State:",
+    "theming": "Theming:",
+    "branding": "Branding:",
+    "routing": "Routing:",
+    "api": "API:",
+    "accessibility": "Accessibility:",
+    "performance": "Performance:",
+    "tooling": "Tooling:",
+    "codebase": "The codebase is modular and easy to extend, with best practices for error handling and maintainability."
+  },
+  "404": {
+    "title": "Lost in the Mix?",
+    "description": "Looks like you’ve shaken things up a bit too much. This page doesn’t exist, but you canalways get back to the homepage for another round!"
+  },
+  "pagination": {
+    "showing": "Showing",
+    "of": "of",
+    "drinks": "drinks",
+    "back": "Back",
+    "page": "Page",
+    "next": "Next"
+  },
+  "footer": {
+    "dataFrom": "Data from",
+    "about": "About"
+  }
+}

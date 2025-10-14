@@ -1,0 +1,65 @@
+{
+  "header": {
+    "fallbackAppName": "App",
+    "homeAria": "Aller à la page d'accueil"
+  },
+  "brandSwitcher": {
+    "selectBrand": "Sélectionner une marque"
+  },
+  "searchBar": {
+    "placeholder": "Rechercher une boisson...",
+    "clear": "Effacer la recherche"
+  },
+  "ageGate": {
+    "title": "Avez-vous 18 ans ou plus ?",
+    "description": "Vous devez confirmer votre âge pour accéder à cette application.",
+    "yes": "Oui, j'ai 18+ ans",
+    "no": "Non"
+  },
+  "homepage": {
+    "title": "Choisissez votre boisson",
+    "sortBy": "Trier par"
+  },
+  "drink": {
+    "home": "Accueil",
+    "ingredients": "Ingrédients:",
+    "instructions": "Instructions:"
+  },
+  "about": {
+    "title": "À propos de {appName}",
+    "business": "Perspective commerciale",
+    "businessDesc": "{appName} est une application web en marque blanche pour les marques et détaillants de boissons. Elle permet à chaque partenaire de présenter ses propres boissons, sa marque et ses fonctionnalités dans une interface personnalisable.",
+    "user": "Perspective utilisateur",
+    "userDesc1": "Les utilisateurs peuvent parcourir les boissons, rechercher et filtrer par goût ou ingrédient, et découvrir de nouveaux favoris. L'application est rapide, facile à utiliser et s'adapte à la marque choisie.",
+    "userDesc2": "L'expérience est fluide sur tous les appareils, avec une navigation claire et un design accessible.",
+    "technical": "Perspective technique",
+    "technicalDesc": "{appName} est conçu pour la performance et la flexibilité :",
+    "framework": "Framework :",
+    "styling": "Style :",
+    "state": "État :",
+    "theming": "Thématisation :",
+    "branding": "Marque :",
+    "routing": "Routage :",
+    "api": "API :",
+    "accessibility": "Accessibilité :",
+    "performance": "Performance :",
+    "tooling": "Outils :",
+    "codebase": "Le code est modulaire et facile à étendre, avec les meilleures pratiques pour la gestion des erreurs et la maintenabilité."
+  },
+  "404": {
+    "title": "Perdu dans le mélange ?",
+    "description": "On dirait que vous avez un peu trop secoué les choses. Cette page n'existe pas, mais vous pouvez toujours revenir à la page d'accueil pour un autre tour !"
+  },
+  "pagination": {
+    "showing": "Affichage",
+    "of": "de",
+    "drinks": "boissons",
+    "back": "Retour",
+    "page": "Page",
+    "next": "Suivant"
+  },
+  "footer": {
+    "dataFrom": "Données de",
+    "about": "À propos"
+  }
+}
