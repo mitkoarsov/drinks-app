@@ -73,7 +73,16 @@
           @if (drink.thumb) {
             <img [src]="drink.thumb" [alt]="drink.name" class="w-10 h-10 object-cover rounded" />
           }
-          <span [innerHTML]="highlightMatch(drink.name)"></span>
+          <div class="flex flex-col">
+            <span class="text-xs text-gray-500">
+              {{
+                drink.isAlcoholic
+                  ? ('drink.alcoholic' | translate)
+                  : ('drink.nonAlcoholic' | translate)
+              }}
+            </span>
+            <span [innerHTML]="highlightMatch(drink.name)"></span>
+          </div>
         </li>
       }
     </ul>

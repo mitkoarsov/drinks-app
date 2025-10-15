@@ -24,7 +24,7 @@ import { PaginationComponent } from '../../components/homepage/pagination.compon
     TranslatePipe,
   ],
   template: `
-    <div class="max-w-5xl mx-auto px-2 sm:px-6">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6">
       <div class="flex items-center justify-between mx-4 my-3">
         <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mr-4 whitespace-nowrap select-none">
           {{ 'homepage.title' | translate }}
@@ -42,6 +42,7 @@ import { PaginationComponent } from '../../components/homepage/pagination.compon
               [id]="drink.id"
               [name]="drink.name"
               [image]="drink.thumb + '/small'"
+              [isAlcoholic]="drink.isAlcoholic"
               [loading]="i === 0 ? 'eager' : 'lazy'"
             ></app-card>
           }

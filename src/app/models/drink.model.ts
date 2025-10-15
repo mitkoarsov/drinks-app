@@ -10,6 +10,7 @@ export interface DrinkListItem {
   id: string;
   name: string;
   thumb: string;
+  isAlcoholic: boolean;
 }
 
 /** Raw detailed drink information from API. */

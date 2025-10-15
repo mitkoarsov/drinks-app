@@ -8,10 +8,14 @@ import {
 import { IngredientDetails } from '../models/ingredient.model';
 
 /* Extracts a simplified drink item representation */
-export const extractDrinkItemData = (rawDrinkItem: RawDrinkListItem): DrinkListItem => ({
+export const extractDrinkItemData = (
+  rawDrinkItem: RawDrinkListItem,
+  isAlcoholic: boolean,
+): DrinkListItem => ({
   id: rawDrinkItem.idDrink,
   name: rawDrinkItem.strDrink,
   thumb: rawDrinkItem.strDrinkThumb,
+  isAlcoholic,
 });
 
 /** Extracts detailed information about a specific drink */
@@ -23,7 +27,7 @@ export const extractDrinkDetails = (rawDrinkData: RawDrinkDetails): DrinkDetails
   videoUrl: rawDrinkData.strVideo,
   category: rawDrinkData.strCategory,
   ibaCategory: rawDrinkData.strIBA,
-  alcoholic: rawDrinkData.strAlcoholic === 'Yes',
+  alcoholic: rawDrinkData.strAlcoholic === 'Alcoholic',
   glassType: rawDrinkData.strGlass,
   instructionsByLang: extractInstructionsByLang(rawDrinkData),
   thumb: rawDrinkData.strDrinkThumb,

@@ -26,7 +26,7 @@ export class DrinksService {
     return this.http.get<{ drinks: RawDrinkListItem[] }>(this.alcoholicUrl).pipe(
       map((result) =>
         (result?.drinks ?? []).map((rawAlcoholDrink: RawDrinkListItem) =>
-          extractDrinkItemData(rawAlcoholDrink),
+          extractDrinkItemData(rawAlcoholDrink, true),
         ),
       ),
       shareReplay(1),
@@ -38,7 +38,7 @@ export class DrinksService {
     return this.http.get<{ drinks: RawDrinkListItem[] }>(this.nonAlcoholicUrl).pipe(
       map((result) =>
         (result?.drinks ?? []).map((rawNonAlcoholicDrink: RawDrinkListItem) =>
-          extractDrinkItemData(rawNonAlcoholicDrink),
+          extractDrinkItemData(rawNonAlcoholicDrink, false),
         ),
       ),
       shareReplay(1),
@@ -58,14 +58,19 @@ export class DrinksService {
 
   /** Searches for drinks by name. */
   searchDrinksByName$(name: string): Observable<DrinkListItem[]> {
-    return this.http
-      .get<{ drinks: RawDrinkListItem[] }>(this.getSearchDrinkUrl(name))
-      .pipe(
-        map((result) =>
-          (result?.drinks ?? []).map((rawDrinkItem: RawDrinkListItem) =>
-            extractDrinkItemData(rawDrinkItem),
+    return this.http.get<{ drinks: RawDrinkDetails[] }>(this.getSearchDrinkUrl(name)).pipe(
+      map((result) =>
+        (result?.drinks ?? []).map((rawDrinkItem: RawDrinkDetails) =>
+          extractDrinkItemData(
+            {
+              idDrink: rawDrinkItem.idDrink,
+              strDrink: rawDrinkItem.strDrink,
+              strDrinkThumb: rawDrinkItem.strDrinkThumb,
+            },
+            rawDrinkItem.strAlcoholic === 'Alcoholic',
           ),
         ),
-      );
+      ),
+    );
   }
 }
