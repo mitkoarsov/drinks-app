@@ -23,7 +23,9 @@
   "drink": {
     "home": "Home",
     "ingredients": "Ingredients:",
-    "instructions": "Instructions:"
+    "instructions": "Instructions:",
+    "alcoholic": "Alcoholic",
+    "nonAlcoholic": "Non-Alcoholic"
   },
   "about": {
     "title": "About {appName}",
