@@ -18,6 +18,11 @@
   color: #fff !important;
 }
 
+/* Accent text utility */
+.text-accent {
+  color: var(--accent) !important;
+}
+
 /* Themed button: primary bg, accent on hover/focus */
 .themed-btn {
   background-color: var(--primary) !important;

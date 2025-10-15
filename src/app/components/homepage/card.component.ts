@@ -26,7 +26,7 @@ import { TranslatePipe } from '../../pipes/translate.pipe';
           [ngClass]="
             isAlcoholic
               ? 'ml-1 inline-block border border-white text-white font-semibold rounded-full px-1.5 py-0 text-[10px] bg-transparent'
-              : 'ml-1 inline-block border border-white text-yellow-500 font-semibold rounded-full px-1.5 py-0 text-[10px] bg-white'
+              : 'ml-1 inline-block border border-white text-accent font-semibold rounded-full px-1.5 py-0 text-[10px] bg-white'
           "
         >
           {{ isAlcoholic ? ('drink.alcoholic' | translate) : ('drink.nonAlcoholic' | translate) }}

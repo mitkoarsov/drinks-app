@@ -1,5 +1,8 @@
 
 <div class="max-w-3xl mx-auto px-4 py-10">
+  <div class="mb-6">
+    <app-button (click)="goHome()">{{ '← ' + ('drink.home' | translate) }}</app-button>
+  </div>
   @let brandConfiguration = brandConfiguration$ | async;
   <h1 class="text-3xl sm:text-4xl font-bold text-primary mb-6">
     {{ 'about.title' | translate: { appName: brandConfiguration?.appName || 'the App' } }}
